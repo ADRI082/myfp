@@ -1,0 +1,29 @@
+DETALLES A REALIZAR PARA EDVENTURE.
+
+Cuando estemos dado de alta un cliente, un campo que ponga la procedencia del cliente.
+. Boca  boca
+. Cliente referido
+. Internet
+. Empleado (que ponga el nombre del empleado)
+. Otros (Campo abierto)
+
+PANEL DE CONTROL DE TIEMPO DE TAREAS
+. Que cada usuario solo vea sus tareas
+. 
+
+USUARIOS NUEVOS
+Marta Sanjuan - msanjuan@edventure.es - pass: ms1nju1n
+Francisco Ariza - fariza@edventure.es - pass: fariza1
+
+GENERACIÓN DE FACTURAS
+Ante de que salga la definitiva, que aparezca una con fondo NO VÁLIDO y que se revise antes de emitirse 
+definitivamente.
+
+TAREAS
+. Error en el cálculo de tiempo previsto en tareas, con las horas previstas en la tarea.
+
+GENERAR FACTURAS
+. Las observaciones de la factura no aparecen cuando se genera la factura
+
+
+

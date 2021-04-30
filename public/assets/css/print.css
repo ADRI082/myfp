@@ -1,0 +1,8 @@
+@media print {
+	body .window{
+		background-color:#ffffff !important;
+		width:100vw !important;
+		height:100vh !important;
+		
+	}
+}

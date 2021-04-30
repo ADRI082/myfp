@@ -1,0 +1,511 @@
+/*
+body{
+    background-color: blue;
+}
+*/
+
+/*************************** DATATABLES *************************/
+
+/* dimensiones cajas de búsqueda */
+thead input {
+        width: 100%;
+        height: 16px !important;
+}
+
+
+/*************************** FIN DATATABLES *************************/
+/* ocultar los iconos del modal de email(fichaclientes) para moviles */
+@media only screen and (max-width: 425px) {
+    .logo {
+     display:none;
+    }
+  }
+/* LA ALTURA DE SELECT2 PRESUPUESTO */
+  .selPres .select2-selection__rendered {
+    line-height: 31px !important;
+}
+.selPres .select2-container .select2-selection--single {
+    height: 31px !important;
+}
+.concepto5 .selPres .select2-selection__rendered {
+  line-height: 31px !important;
+}
+.concepto5 .selPres .select2-container .select2-selection--single {
+  height: 31px !important;
+}
+
+.modalVinBtn {
+  background-color: #1e7e34 !important;
+}
+
+.btnNuevaPlantilla{
+  background-color: #003cff;
+  color: #fff !important;
+}
+
+.contenedoresPlantillas {
+  border: 1px solid #dcd6d6;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.obligatorio{
+  background-color: #ffc10738;
+}
+
+.titleClienteDatos{
+  border-bottom: 2px solid gold;
+  color: cadetblue;
+  font-size: 1rem;
+}
+
+.modal-header{
+  background-color: gold;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.2rem;
+  padding-top: 0.2rem;
+}
+
+.asesorExterno {
+  margin-left: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+/*.sector span .select2-selection.select2-selection--single,
+.actividad span .select2-selection.select2-selection--single,
+.colaborador span .select2-selection.select2-selection--single,
+.agente span .select2-selection.select2-selection--single{
+  background-color: #fff1c9 !important;
+}*/
+
+span.select2-selection.select2-selection--single {
+  font-size: .875rem;
+}
+
+.nav-sidebar>.nav-item .nav-icon {
+  text-align: left;
+}
+
+
+.seleccionada {
+  background-color: #eaeef1;
+  /*color: #fff;*/
+}
+
+.selected{
+  cursor: pointer;
+}
+.add_fila i.fas.fa-plus-square,
+.add_filaEdit i.fas.fa-plus-square
+{
+  font-size: 30px;
+  color: #0400ff;
+}
+.del_fila i.fas.fa-minus-square,
+.del_filaEdit i.fas.fa-minus-square
+{
+  font-size: 30px;
+  color: red;
+}
+
+.concepto5 input.form-control {
+  margin-bottom: 15px;
+}
+
+.form-check-input.marcaraccion {
+  margin-left: 0rem;
+  margin-right: 1rem;
+  position: relative;
+}
+
+.form-check-input.marcaraccionProy {
+  margin-left: 0rem;
+  margin-right: 1rem;
+  position: relative;
+}
+
+i.fas.fa-info-circle.infoAccion {
+  color: gold;
+  font-size: 20px;
+}
+
+i.fas.fa-check-circle.agregarAcc {
+  color: #28a745;
+  font-size: 20px;
+}
+
+i.fas.fa-times-circle.quitarAcc {
+  color: #d61023;
+  font-size: 20px;
+}
+
+a#btnExportFila,
+a#btnEnviarFila,
+a#btnAprobarFila,
+a#btnRechazarFila
+{
+  font-size: 0.75rem;  
+}
+
+.btnAprobarFila, .btnRechazarFila, .btnEliminarLinea{
+  padding: .3rem .45rem;
+  max-height: 50%;
+}
+
+.fas {
+  font-size: 1rem;
+}
+
+.btnAprobarFila.edit,
+.btnRechazarFila.edit {
+  height: 30px;
+  width: 60px;
+  font-size: 0.85rem;
+  padding: 0px;
+}
+
+.edit i.fas.fa-thumbs-up,
+.edit i.fas.fa-thumbs-down {
+  font-size: 1rem;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.inputResaltadoFichaProyecto{
+  background-color: gold;
+}
+
+.modalCliente{
+  padding-bottom: 0px;
+}
+
+.lineaCoste{
+  font-size: 0.85rem;
+}
+
+.asignaAgente div.tail-select {
+  width: 100% !important;
+}
+
+.contenedorEmpleado div.tail-select.no-classes {
+  width: 100%;
+}
+
+.modal-header.participantesBD{
+  background-color: #4e555b;
+}
+
+#tablaParticipantes{
+  width: 100% !important;
+}
+
+table td.contBtnsDocs{
+  vertical-align: middle;
+}
+
+#btnDownloadDoc i.fas.fa-file-download,
+#btnGenerarPdf i.fas.fa-file-download{
+  font-size: 1.2rem;
+  color: #df380e;
+}
+
+#enviarFormulario1 i.fas.fa-envelope,
+#enviarFormulario2 i.fas.fa-envelope{
+  font-size: 1.2rem;
+  color: #e2f01e;
+}
+
+#tablaFacturasProy td,
+#tablaGastosProy td
+{
+  padding: 0rem;
+
+}
+
+#tablaFacturasProy input
+{
+  padding: 0px;
+
+}
+
+span.label-inner {
+  font-size:0.85rem;
+  height:36px;
+}
+
+#tablaDocumentosproyecto td{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#tablaDocumentosproyecto{
+  width: 100% !important;
+}
+
+#formEnvioFactura .tail-select {
+  width: 100%;
+}
+.msgEMailFactura{
+  width: 100%;
+}
+
+
+span.twitter-typeahead {
+  width: 100%;
+}
+input.typeahead.tt-input {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.2);;
+  border-radius: 4px;
+}
+.tt-menu{
+  background: white;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  text-align: left;
+}
+
+.tt-suggestion {
+  padding: 5px 10px;
+}
+
+.sector span .select2-selection.select2-selection--single, 
+.colaborador span .select2-selection.select2-selection--single {
+    height: calc(1.8125rem + 2px) !important;
+    /*background-color: #ffc10738 !important;*/
+    font-size: .875rem;
+}
+
+.inputTipoModalidad {
+  font-size: 0.875rem;
+}
+
+.select2-container {  
+  width: 100% !important;
+}
+
+.card-primary:not(.card-outline)>.card-header {
+  background-color: #001f3f;
+}
+
+.modalAddBtn {
+  color: #fff;
+  background-color: #001f3f;
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+.modalAddBtn:hover {
+    color: #fff;
+    background-color: #235181;
+    border-color: #235181;
+}
+
+button.noRepartir {
+  margin-left: 300px;
+}
+
+div.form-group.actividad {
+  margin-bottom: 0rem;
+}
+
+#tablaAreas td.fila,
+#tablaAreasProyecto td.fila{
+  padding-left: 0rem;
+  padding-right: 0rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  vertical-align: middle;
+}
+
+#tablaAreas th,
+#tablaAreasProyecto th{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+input.inputSinBordeNoeditable {
+  border: none;
+  background-color: #ffff;
+  width: 100%;
+  text-align: center;
+}
+
+input.inputSinBordeEditable {
+  border: none;
+  background-color: rgb(255 241 201);
+  width: 100%;
+  text-align: center;  
+}
+
+td.fila.tdInputObligatorio {
+  background-color: #fff1c9;
+}
+
+input.readonlyblanco {
+  background-color: #ffff !important;
+}
+a.updateGastos, a.deleteGastos{
+  height: 100%;
+}
+
+#table_registroPersonal .table-active, .table-active>td, .table-active>th {
+  background-color: rgb(0 31 63);
+  color: #ffff;
+}
+
+#formProfesores div.form-group,
+#formEditarCliente div.form-group,
+#formAgregarCliente div.form-group,
+#formAgregarOportunidad div.form-group,
+#formEditarOportunidad div.form-group {
+  margin-bottom: 0.2rem;
+}
+
+#formProfesores label.col-form-label{
+  font-size: 0.85rem;
+}
+
+#formAgregarAgenteInforma div.form-group, 
+#formEditarAgenteInforma div.form-group,
+#formAgregarColaborador div.form-group,
+#formEditarColaborador div.form-group
+{
+  margin-bottom: 0rem;
+}
+
+#formAgregarAgenteInforma label.col-form-label,
+#formEditarAgenteInforma label.col-form-label,
+#formAgregarColaborador label.col-form-label,
+#formEditarColaborador label.col-form-label {
+  font-size: 0.85rem;
+}
+
+#formEditarCliente label.control-label,
+#formAgregarCliente label.control-label,
+#formAgregarOportunidad label.control-label,
+#formEditarOportunidad label.control-label,
+#formAgregarAsesor label.control-label,
+#formEditarAsesor label.control-label {
+  font-size: 0.85rem;
+}
+
+
+#formAgregarAsesor label.control-label,
+#formEditarAsesor label.control-label {
+  vertical-align: middle;
+}
+
+
+#formProfesores label.col-form-label{
+  padding-top: 0.3rem;
+  padding-bottom: 0.1rem;
+}
+
+#tablaFicherosProfesor th, #tablaFicherosProfesor th {
+  padding: 0rem;
+}
+
+.miniListados{
+  font-size: 0.85rem;
+}
+
+.inputSinBorde{
+ border: none;
+ font-size: 0.85rem; 
+}
+
+#tabla_permisoConducir td, #tabla_disponibilidad td, 
+#tabla_idiomas td, #tabla_informatica td,
+#tabla_perfilFormador td {  
+    font-size: 0.85rem;
+}
+
+.rowTablaProfesores{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#tablaAcciones td{
+  padding: 0px;
+}
+
+#tablaAccionesEdit td{
+  padding: 0.2rem;
+}
+
+.labelCampoPres{  
+  font-size: 0.8rem;
+  margin-bottom: 0rem;
+  color: black;
+}
+
+.estiloFilaImpar{
+  background-color: #a0daec;
+}
+
+#formularioEdicionPresupuesto input{
+  font-size: 0.875rem;
+}
+
+.tail-select.no-classes {
+  width: 100%;
+}
+
+span.inputResaltadoFichaProyecto {
+  font-size: 0.85rem;
+}
+
+.select2-container--bootstrap4 .select2-selection {
+  height: 2rem !important;
+}
+
+#addLineaIngreso i.fas.fa-plus-square,
+#addLineaGasto i.fas.fa-plus-square, #addLineaGastoComun i.fas.fa-plus-square  {
+  font-size: 1.7rem;  
+  color: #001f3f;
+}
+
+#tablaEmailsEnvioFactura td, #tablaEmailsEnvioFactura th {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+.conceptoPredefinido {
+  position: relative;
+  margin-top: .3rem;
+  margin-left: 2rem;
+}
+
+.lineaFact{
+  border-top: 1px solid #bbbcbd;
+}
+
+.lineasPares{
+  background-color: #a0daec;
+}
+
+/*.lineasImpares{
+  background-color: #df380e;
+}*/
+
+.note-editable{
+  background-color: white;
+  line-height: 1.0;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: #001f3f;
+}

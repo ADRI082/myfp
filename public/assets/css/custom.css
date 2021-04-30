@@ -1,0 +1,566 @@
+/*Formulario de Login*/
+
+.wrapperLogin{
+    /*background-image: url('../../assets/images/misc/PROTESIS.jpg');*/
+	background-size: cover;
+    background-color:#f1f1f1;
+    height:100vh;
+}	
+
+.login form {
+	width:300px;
+    margin:8% auto;
+    padding: 26px 24px 46px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.13);
+    box-shadow: 0 1px 3px rgba(0,0,0,.13);
+}
+
+div.login{
+	font-size:1.2em;
+}
+div.login label{
+	padding:0px 2px;
+	font-weight: 600;
+}
+
+.login form .btn-primary{
+	background:#841034;
+	border:none;
+}
+
+#botonOlvido{
+	font-size:13px;
+}
+
+
+.login a{
+    color: #23527c;
+}
+
+
+
+/*Clase section y contenidos*/
+
+body{
+	font-size:14px;
+}
+
+.section{
+	margin: 0px;
+	/*height: 620px;*/
+	min-height: 90vh;
+}
+.perfil{
+	min-height: 30vh;
+}
+.objetivos{
+	min-height: 50vh;
+}
+
+div#wrapper{
+	padding:0;
+	overflow:auto;
+}
+
+div#wrapper .navbar{
+	margin-bottom:0;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color:#ffffff;
+}
+	
+.navbar-dark .navbar-nav .active>.nav-link{
+	color:#ffffff;		
+}
+
+.nav-link{
+	color:#ffffff;
+}
+
+div#nav-tab .nav-link { /* para los tC-tulos de las etiquetas solicitudes*/
+	color: #841034;
+}
+
+.navbar-dark .navbar-toggler {
+	color:#ffffff;				
+}
+
+.navbar-toggler-icon {
+	background-color: #ffffff;
+}
+
+.navbar-dark .navbar-toggler {
+	border-color:  #ffffff;
+}
+
+div#wrapper .navbar {
+	/*background-color: #438065;*/
+	background-color: #841034;
+}
+
+footer {
+	height: 40px;
+	text-align: center;
+	background-color:#77767624;
+	/*background-color: #84103424;*/
+}
+
+#nuevaSolicitud, #anadirFichero{
+	color: #fff;
+	background-color: var(--success);
+    border-color: #1fca97;
+}
+
+.solicitar{
+	padding-top:15px;
+}
+
+.listaSolicitudes{
+	padding-top:15px;
+	width: 66%;
+    margin: 1px;
+    color: 1px solid rgba(0,0,0,.125);
+    border-radius: 5px;
+}
+
+.listado{
+	padding-top: 15px;
+}
+
+.listaSolicitudes h5{
+
+}
+
+#tablaListado{
+	/*margin: 1rem;*/
+    width: 100%;
+}
+
+#formularioEnviarSolicitud{
+	padding-top:15px;
+	padding-bottom: 15px;
+}
+
+#enviarSolicitud, #subirNomina {
+    background-color: #9c0606;
+    border-color: #8a1928;
+}
+
+.tomadas, .aprobadasNoDisfrutadas, .pendientes {
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	/*border-radius: 5px;*/
+	/*margin:2px;*/
+}
+
+.tomadas {
+	background-color: #007bff;
+}
+
+.aprobadasNoDisfrutadas {
+	background-color: #ffc107;
+}
+
+.pendientes {	
+	background-color: #de0808;
+}
+
+.tablaNomminas{
+    padding-top: 25px;
+    padding-left: 18px;
+}
+.wrapperLogin::before{
+	display:table;
+	content:' ';
+}
+.fa-check-circle{
+	color: #098425;
+}
+
+.fa-times-circle{
+	color: #a50e0e;
+}
+
+table#tablaListado .pendiente {
+	color: #ffc107;
+	font-weight: 500;
+}
+table#tablaListado .aprobada {
+	color: #282ca7;
+	font-weight: 500;
+}
+table#tablaListado .rechazada {
+	color: #e80707;
+	font-weight: 500;
+}
+
+.fa-2x {
+    font-size: 1.3em;
+}
+
+/*#calendario .table-responsive tr{
+	height: 20px;
+}*/
+
+div#calendario {
+	margin-right: 0px;
+}
+
+/*#nombresTrabajadores th {
+    padding: 0.5rem 0.75rem;
+}*/
+
+#nav-tab a{
+	color: #058c10;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#nav-tab .active{
+	color: #841034;
+	font-weight: 650;
+}
+
+#menuSolicitudes{
+	margin-top: 15px;
+}
+
+.celdaVacacionesAprobada{
+	background: #28a745;
+}
+.celdaVacacionesDenegada{
+	background: #ef0000;
+}
+.celdaVacacionesPendiente{
+	background: #007bff;
+}
+
+.festivo{
+	background: #c7cbd0d9;
+}
+
+.fd {
+	background: black;
+}
+
+.finDeSemana{
+	background: black;	
+}
+
+.diasAnio .dias {
+	font-size: 10px;
+}
+
+.progress.vacaciones {
+    height: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.progress.leyenda {
+	height: 1.5rem;
+    background-color: #ffffff;
+    font-size: 0.9rem;
+    color: black;
+}
+
+.leyendaCalendario {
+	margin-left: 15px;
+	border-radius: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.leyendaCalendarioTexto{
+	width: 140px;
+    height: 40px;
+    margin-left: 3px;
+}
+
+.leyendaCalendarioTexto2{
+	width: 60px;
+    height: 40px;
+    margin-left: 3px;
+}
+
+.table .thead-light th {
+	/*background-color: #f1a21e3b;*/
+	background-color: #fddbc4;
+}
+h5.card-title {
+    color: #841034;
+}
+
+
+
+
+.table-responsive-sm.nomina {
+    padding-top: 15px;
+}
+
+table.table.table-bordered.nomina {
+    width: 80%;
+}
+
+select.form-control.anio{
+	width: 120px;
+}
+
+button.filtroMatriz,
+a.filtroMatriz {
+    min-width: 195px;
+}
+
+input.inputMatriz {
+    font-size: 0.85rem;
+}
+
+#MyScaffold table thead tr th a {
+    color: #212529;
+}
+
+.input-group.funcionUsuario.mb-3.col-sm-12 {
+	margin-left: 105px;
+}
+
+.input-group-prepend.checkUsuario{
+	margin: 10px;	
+}
+
+.input-group-text.ckeck {
+    height: 38px;
+}
+
+button.btn.btn-warning.volverCrearFunc,
+a.btn.btn-warning.volverCrearFunc,
+a.btn.btn-warning.volverListado,
+button.btn-primary.btnAsignarFunc,
+button#asignarFuncionBoton{
+    min-width: 195px;
+}
+
+img.fotoPerfil {
+    max-width: 150px;
+    border: 1px solid #bcc0c4;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+label.asignarFuncionLabel{
+    user-select: none;
+    cursor: pointer;
+}
+
+h5.card-title.asignacionFuncion {
+    margin-left: 15px;
+}
+
+.table.diasAnio td, .table.diasAnio th,
+.table.nombresTrabajadores td, 
+.table.listaPendientes td, 
+.table.listaAprobadas td, 
+.table.listaRechazadas td {
+    padding: 1px;
+    height: 20px;
+}
+
+table#nombresTrabajadores,
+table#diasCalendario {
+    font-size: 12px;
+}
+
+table.table.table-bordered.listaPendientes,
+table.table.table-bordered.listaAprobadas,
+table.table.table-bordered.listaRechazadas,
+.navegacionSolicitudes {
+	width: 98%;
+}
+
+tr.dias.titulo, tr.titulo {
+    height: 50px;
+}
+
+a.btn.btn-default.aprobarVac,
+a.btn.btn-default.rechazarVac,
+a.btn.btn-default.verHistorico,
+a.btn.btn-default.verHistoricoAprobadas,
+a.btn.btn-default.verHistoricoRechazadas {
+	padding: 0rem;
+}
+
+div#navbarSupportedContent .navbar-dark .navbar-nav .nav-link:focus, 
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .show>.nav-link {
+    /*color: rgb(241, 245, 6);*/
+    color: #d5fb03;
+}
+
+select#selectTrabajadorFunc{
+	margin-bottom: 20px;
+}
+
+.row.botonesMatriz {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom:15px;
+    margin-top:15px;
+}
+
+.row.text-center.barraLeyenda {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.nav-link.linksSesion:focus, .nav-link.linksSesion:hover {
+    color: #d5fb03;
+}
+/**/
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: #d5fb03;
+}
+
+section.container.section.subirNomina {
+    min-height: 25vh;
+}
+
+.filtroListadoNomina {
+    margin-top: 3em;
+}
+
+.selectPuesto {
+    width: 362px;
+    margin-left: 8px;
+}
+
+.selectorPuesto{
+	background-color: #c2e1ff;
+}
+
+.link{
+	color: #4242d4;
+}
+
+.navbar-toggler-icon {
+    background-color: rgba(0,0,0,.075);
+}
+
+.solicitud {
+	max-width: 36rem;
+}
+
+.card.datos.w-400, .card.funciones.w-400{
+	height: 80vh;
+}
+
+.v-scroll {
+    /*height: 70vh;*/
+    overflow-y: auto;
+ }
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(253, 219, 196, 0.28);
+}
+
+.table td, .table th {
+    padding: .45rem;
+}
+
+.tituloFijo {
+	padding-top: 1.25rem;
+	padding-right: 2.4rem;
+	padding-left: 1.25rem;
+}
+
+.nav-pills .nav-link {
+    color: #841034;
+}
+.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #17a2b8;
+}
+
+.objetivo {
+	border: 2px solid #025e5e;
+	background-color: #025e5e;
+	border-radius: 4px;
+	color: #fff;
+}
+
+.total {
+	border: 2px solid #f9f9f9;
+	background-color: #f9f9f9;
+	color: #841034;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.objetivosList{
+	background-color: #f8f9fa;
+}
+
+a.pillTitle{
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/**/
+
+.card-text.descripcionObj{
+	color: #343a40;
+}
+
+/*clase para rotar imagenes*/
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.trimestre1 {
+    background-color: #17a2b8;
+    padding: 5px;
+}
+
+.btn-trimestres {
+    color: #fff;
+}
+
+div.contenido div{
+	padding: 0.4rem;
+}
+
+div.contenido div>h5.card-title{
+	font-size: 0.9rem;
+	margin-bottom: 0;
+}
+
+#guardarEvaluacion1{
+	min-width: 15%;
+}
+
+.btnCrearObjetivo{
+	min-width: 100%;	
+}
+
+div#acordionObjetivos {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.btnsActualizarObjetivo{
+	min-width: 100%;
+}
+
+.objBloqueado {
+	border-color: #950f0f;
+	background-color: #f4dfe1;
+}
+
+.objHabilitado {
+	border-color: #17a2b8;
+	background-color: #d5f3f8;
+}
