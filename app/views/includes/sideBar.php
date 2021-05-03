@@ -47,7 +47,7 @@
                  <ul class="nav nav-treeview">
                      <?php
                         $videos = array(
-                            array('nombre' => 'Mi perfil', 'url' => 'perfil', 'icon' => 'fas fa-user')
+                            array('nombre' => 'Mi perfil', 'url' => 'Perfil', 'icon' => 'fas fa-user')
 
                         );
 
@@ -78,7 +78,7 @@
                  <ul class="nav nav-treeview">
                      <?php
                         $videos = array(
-                            array('nombre' => 'Cursos', 'url' => 'cursos', 'icon' => 'fas fa-book')
+                            array('nombre' => 'Cursos', 'url' => 'Cursos', 'icon' => 'fas fa-book')
 
                         );
 

@@ -509,3 +509,5 @@ span.inputResaltadoFichaProyecto {
   color: #fff;
   background-color: #001f3f;
 }
+
+th.dt-center, td.dt-center { text-align: center; }

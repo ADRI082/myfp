@@ -92,6 +92,8 @@
 
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/fichar.js?v=<?php echo(rand()); ?>"></script>
 
+<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/cursos.js?v=<?php echo(rand()); ?>"></script>
+
 <!-- Configuracion -->
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/configuracion.js?v=<?php echo(rand()); ?>"></script>
 <!-- proveedores -->
