@@ -22,5 +22,15 @@ class ModeloAsignaturas
 
    }
 
+   public function obtenerDatosAsignatura($idAsignatura)
+   {
+    $this->db->query('SELECT idAsignatura,nombre FROM asignatura where idAsignatura ='.$idAsignatura);
+    
+    $asignatura = $this->db->registro();
+
+
+    return $asignatura;
+   }
+
 
 }

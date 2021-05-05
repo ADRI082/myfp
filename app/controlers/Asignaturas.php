@@ -16,15 +16,11 @@ class Asignaturas extends Controlador
         //Obtener los usuarios
         $this->iniciar();
 
-        $cursos = $this->modeloCursos->buscadorCursos();
-
-        $datos = [
-            "cursos" => $cursos
-        ];
+        $datos = $this->modeloAsignatura->obtenerDatosAsignatura($_GET['id']);
 
 
         if (isset($_SESSION['autorizado']) || $_SESSION['autorizado'] == 1) {
-            $this->vista('cursos/cursos', $datos);
+            $this->vista('asignatura/asignatura', $datos);
         } else {
             redireccionar('/login');
         }

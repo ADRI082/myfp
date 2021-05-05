@@ -6,6 +6,8 @@ if (window.location.pathname.includes('/Cursos')) {
 
         idCurso = $(this).val();
 
+        $('#tablaAsignaturas').dataTable().fnDestroy();
+
 
         $('#tablaAsignaturas').DataTable({
             "processing": true,
@@ -22,7 +24,7 @@ if (window.location.pathname.includes('/Cursos')) {
                 { data: "idAsignatura" },
                 { data: "nombre" },
                 { data: "abreviatura" },
-                {"defaultContent": "<a href='' data-toggle='modal' data-target='#emit' class='btn btn-primary btn-xs ver'> <i class='fas fa-eye'></i></a"},
+                {"defaultContent": "<a class='btn btn-primary btn-xs ver'> <i class='fas fa-eye'></i></a"},
             ],
             columnDefs: [
                 {
@@ -40,10 +42,21 @@ if (window.location.pathname.includes('/Cursos')) {
     });
 
 
+    $(document).on('click', '.ver', function (e) {
+
+        e.preventDefault();
+
+        fila = $(this).closest("tr");
+        idAsignatura = parseInt(fila.find('td:eq(0)').text());
 
 
+        window.location.replace('http://localhost/myfp/Asignaturas?id='+idAsignatura);
+    });
 
+
+    
 }
+
 
 
 

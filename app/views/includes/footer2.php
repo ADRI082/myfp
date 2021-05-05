@@ -75,29 +75,13 @@
 <script src='<?php echo RUTA_URL ?>/public/librerias/fullcalendar/packages/moment/main.js'></script>
 <script src='<?php echo RUTA_URL ?>/public/librerias/fullcalendar/packages/moment-timezone/main.js'></script>
 
-<!-- ficha cliente -->
-<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/fichaCliente.js?v=<?php echo(rand()); ?>"></script>
-
-<!-- end ficha cliente -->
-<!-- calendario -->
-<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/calendario.js?v=<?php echo(rand()); ?>"></script>
-<!-- end calendario -->
-<!-- presupuesto -->
-<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/presupuesto.js?v=<?php echo(rand()); ?>"></script>
-<!-- end presupuesto -->
-<!-- proyecto -->
-<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/proyecto.js?v=<?php echo(rand()); ?>"></script>
-<!-- end proyecto -->
-<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/gastosGenerales.js?v=<?php echo(rand()); ?>"></script>
-
-<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/fichar.js?v=<?php echo(rand()); ?>"></script>
 
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/cursos.js?v=<?php echo(rand()); ?>"></script>
 
+<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/asignatura.js?v=<?php echo(rand()); ?>"></script>
+
 <!-- Configuracion -->
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/configuracion.js?v=<?php echo(rand()); ?>"></script>
-<!-- proveedores -->
-<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/proveedores.js?v=<?php echo(rand()); ?>"></script>
 
 <!-- <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/ckeditor/ckeditor.js?v=<?php echo(rand()); ?>"></script> -->
 <!-- <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script> -->
@@ -120,8 +104,6 @@
 <!-- seguimiento proyectos -->
 <script src='<?php echo RUTA_URL ?>/public/js/seguimiento/selectBoxBuscadorClientes.js'></script>
 <script src='<?php echo RUTA_URL ?>/public/js/seguimiento/seguimientoPresupuesto.js'></script>
-<script src='<?php echo RUTA_URL ?>/public/js/reportesProyecto.js'></script>
-<script src='<?php echo RUTA_URL ?>/public/js/reportesPersonal.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <script src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.js"></script>
 <!-- sweetalert2 -->

@@ -26,7 +26,7 @@ class Login extends Controlador{
 
         if($usuario->email && $usuario->password){
             session_start();
-            $_SESSION['id_usuario'] = $usuario->nickname;
+            $_SESSION['id_usuario'] = $usuario->idUsuario;
             $_SESSION['nombre'] = $usuario->nombre;
             $_SESSION['apellidos'] = $usuario->apellido;
             $_SESSION['mail'] = $usuario->email;
