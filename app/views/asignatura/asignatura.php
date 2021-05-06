@@ -41,6 +41,7 @@
                     <tr>
                         <th>idArchivo</th>
                         <th>Nombre</th>
+                        <th>Fecha Subida</th>
                         <th>Bloque</th>
                         <th>Acción</th>
                     </tr>
@@ -51,6 +52,7 @@
                     <tr>
                         <th>idArchivo</th>
                         <th>Nombre</th>
+                        <th>Fecha Subida</th>
                         <th>Bloque</th>
                         <th>Acción</th>
                 </tfoot>

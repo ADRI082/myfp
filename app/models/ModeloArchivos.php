@@ -34,4 +34,16 @@ class ModeloArchivos
             return false;
         }
     }
+
+    public function getDocumentosByIdAsignatura($idAsignatura)
+    {
+
+        $this->db->query('SELECT idArchivos, ar.nombre, bl.nombre as bloque, fechaSubida from archivos ar
+        left join bloques bl on ar.bloques_idBloques = bl.idBloques 
+        where idAsignatura ='.$idAsignatura);
+
+        $archivos = $this->db->registros();
+
+        return $archivos;
+    }
 }

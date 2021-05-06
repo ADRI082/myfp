@@ -97,6 +97,22 @@ class Asignaturas extends Controlador
 
     }
 
+    public function getDocumentosByIdAsignatura()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+
+            $idAsignatura = $_POST['idAsignatura'];
+
+            $resultado = $this->modeloArchivo->getDocumentosByIdAsignatura($idAsignatura);
+
+            echo json_encode($resultado);
+
+        }
+
+    }
+
 
 
     

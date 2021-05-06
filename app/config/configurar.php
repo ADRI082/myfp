@@ -15,6 +15,6 @@ define('RUTA_APP', dirname(dirname(__FILE__)));
 
 define('RUTA_URL','http://localhost/myfp');
 // NOMBRE DEL SITIO
-define('NOMBRE_SITIO', 'INFORMA CONSULTORES');
+define('NOMBRE_SITIO', 'MyFP');
 // CARPETA PARA SUBIR FICHEROS
 define("DOCUMENTOS_PRIVADOS", RUTA_APP."/documentos/");

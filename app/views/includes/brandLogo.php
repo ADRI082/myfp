@@ -13,5 +13,5 @@
       
       
       
-           <span class="brand-text font-weight-light">Informa Consultores</span>
+           <span class="brand-text font-weight-light">MyFP</span>
     </a>

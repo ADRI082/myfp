@@ -1,5 +1,15 @@
 if (window.location.pathname.includes('/Asignaturas')) {
 
+    $(document).ready(function () {
+
+        idAsignatura = $('#idAsignatura').val()
+
+        cargarDataTable(idAsignatura);
+
+        $('#tablaDocumentos').show();
+
+    })
+
 
 
     $(document).on('click', '#addFichero', function () {
@@ -38,7 +48,6 @@ if (window.location.pathname.includes('/Asignaturas')) {
 
     })
 
-
     $(document).on('click', '#btnGuardarFichero', function (e) {
 
         e.preventDefault();
@@ -53,22 +62,71 @@ if (window.location.pathname.includes('/Asignaturas')) {
         fd.append('idBloque', idBloque);
 
 
-
         $.ajax({
             type: "POST",
             cache: false,
             contentType: false,
             processData: false,
-            data:fd,
+            data: fd,
             url: "../../myfp/Asignaturas/guardarFichero",
             success: function (respuesta) {
 
             }
         });
 
+        $('#modalSubidaFichero').modal('hide');
+
+        $('#tablaDocumentos').dataTable().fnDestroy();
+
+        cargarDataTable(idAsignatura);
+
+        $('#tablaDocumentos').show();
 
 
     });
+
+    $(document).on('click', '.descargar', function (e) {
+
+        e.preventDefault();
+
+        filaDocProyecto = $(this).closest("tr");
+        idAsignatura = $('#idAsignatura').val(); //capturo el id
+        nombreFichero = filaDocProyecto.find('td:eq(1)').text();
+        
+        //window.open("dist/documentosficherosFactura/" + idfactura + "_" + nombreFichero);
+        window.open("app/documentos/ficheros/" + idAsignatura + "_" + nombreFichero);
+    });
+
+    function cargarDataTable(idAsignatura) {
+
+        $('#tablaDocumentos').DataTable({
+            "processing": true,
+            "serverSide": false,
+            "ajax": {
+                "url": "http://localhost/myfp/Asignaturas/getDocumentosByIdAsignatura",
+                "type": "POST",
+                dataSrc: "",
+                "data": {
+                    idAsignatura: idAsignatura
+                }
+            },
+            columns: [
+                { data: "idArchivos" },
+                { data: "nombre" },
+                { data: "fechaSubida" },
+                { data: "bloque" },
+                { "defaultContent": "<a class='btn btn-success btn-xs descargar'> <i class='fas fa-download'></i></a" },
+            ],
+            columnDefs: [
+                {
+                    className: 'dt-center',
+                    "targets": "_all"
+                }
+            ]
+        });
+
+
+    }
 
 
 
