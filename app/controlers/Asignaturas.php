@@ -8,6 +8,8 @@ class Asignaturas extends Controlador
     {
         // cargamos el modelo asociado a este controlador
          $this->modeloAsignatura = $this->modelo('ModeloAsignaturas');
+         $this->modeloArchivo = $this->modelo('ModeloArchivos');
+
     } // fin del constructor
 
     public function index()
@@ -38,6 +40,61 @@ class Asignaturas extends Controlador
 
         }
        
+    }
+
+    public function obtenerBloquesAsignatura()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+            $idAsignatura = $_POST['idAsignatura'];
+
+            $resultado = $this->modeloAsignatura->obtenerBloquesAsignatura($idAsignatura);
+
+            echo json_encode($resultado);
+
+        }
+
+    }
+
+    public function guardarFichero()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+           //insetar el fichero en la base de datos
+
+          
+
+           $this->modeloArchivo->guardarFichero($_FILES,$_POST);
+
+           
+           $nombre = $_POST['idAsignatura']."_".$_FILES['fichero']['name'];
+           //$carpeta = "ficherosFactura";
+           $carpeta = "ficheros";
+           
+           $guardado = $_FILES['fichero']['tmp_name'];
+
+           if (!file_exists(DOCUMENTOS_PRIVADOS . $carpeta)) {
+               mkdir(DOCUMENTOS_PRIVADOS . $carpeta, 0777, true);
+               if (file_exists(DOCUMENTOS_PRIVADOS . $carpeta)) {
+                   if (move_uploaded_file($guardado, DOCUMENTOS_PRIVADOS . $carpeta . '/' . $nombre)) {
+                       $confirma = true;
+                   } else {
+                       $confirma = false;
+                   }
+               }
+           } else {
+               if (move_uploaded_file($guardado, DOCUMENTOS_PRIVADOS . $carpeta . '/' . $nombre)) {
+                   $confirma = true;
+               } else {
+                   $confirma = false;
+               }
+           }
+
+        }
+
+
     }
 
 

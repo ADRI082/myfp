@@ -32,5 +32,14 @@ class ModeloAsignaturas
     return $asignatura;
    }
 
+   public function obtenerBloquesAsignatura($idAsignatura)
+   {
+    $this->db->query('SELECT idBloques, nombre FROM bloques where Asignatura_idAsignatura ='.$idAsignatura);
+    
+    $bloques = $this->db->registros();
+
+    return $bloques;
+   }
+
 
 }
