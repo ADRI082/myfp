@@ -94,7 +94,7 @@ if (window.location.pathname.includes('/Asignaturas')) {
         nombreFichero = filaDocProyecto.find('td:eq(1)').text();
         
         //window.open("dist/documentosficherosFactura/" + idfactura + "_" + nombreFichero);
-        window.open("app/documentos/ficheros/" + idAsignatura + "_" + nombreFichero);
+        window.open("public/documentos/ficheros/" + idAsignatura + "_" + nombreFichero);
     });
 
     function cargarDataTable(idAsignatura) {

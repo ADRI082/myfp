@@ -12,9 +12,9 @@ define('DB_NOMBRE','test_informa_local');*/
 
 // Ruta de la aplicacion
 define('RUTA_APP', dirname(dirname(__FILE__)));
-
+define('RUTA_PUBLIC', dirname(dirname(dirname(__FILE__))));
 define('RUTA_URL','http://localhost/myfp');
 // NOMBRE DEL SITIO
 define('NOMBRE_SITIO', 'MyFP');
 // CARPETA PARA SUBIR FICHEROS
-define("DOCUMENTOS_PRIVADOS", RUTA_APP."/documentos/");
+define("DOCUMENTOS_PRIVADOS", RUTA_PUBLIC."/public/documentos/");

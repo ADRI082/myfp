@@ -64,8 +64,6 @@ class Asignaturas extends Controlador
 
            //insetar el fichero en la base de datos
 
-          
-
            $this->modeloArchivo->guardarFichero($_FILES,$_POST);
 
            
@@ -74,6 +72,8 @@ class Asignaturas extends Controlador
            $carpeta = "ficheros";
            
            $guardado = $_FILES['fichero']['tmp_name'];
+
+           
 
            if (!file_exists(DOCUMENTOS_PRIVADOS . $carpeta)) {
                mkdir(DOCUMENTOS_PRIVADOS . $carpeta, 0777, true);
