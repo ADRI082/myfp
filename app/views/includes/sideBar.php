@@ -22,7 +22,7 @@
                         'Seguimiento Acciones', 'Ingresos/Gastos', 'Registro Personal', 'Varios', 'Ficha Clientes', 'Calendario',
                         'Eventos', 'Presupuestos', 'Proyectos', 'Agentes Informa', 'Colaboradores', 'Oportunidades', 'Clientes', 'Acciones',
                         'Profesores y C.F.', 'Proveedores', 'Asesores', 'Gastos Generales', 'Act. Empresariales', 'Areas formativas', 'Contactos', 'Cuentas Bancarias', 'Cuentas Contables',
-                        'Tipos Gastos Generales', 'Materiales', 'Modalidades', 'Plantillas', 'Roles', 'Sectores', 'Tipos de Acción', 'Vídeos', 'Mi perfil','Cursos'
+                        'Tipos Gastos Generales', 'Materiales', 'Modalidades', 'Plantillas', 'Roles', 'Sectores', 'Tipos de Acción', 'Vídeos', 'Mi perfil','Cursos','Mis Asignaturas'
                     ];
                 } else {
                     $permisos = ['Ingresos/Gastos'];
@@ -79,6 +79,38 @@
                      <?php
                         $videos = array(
                             array('nombre' => 'Cursos', 'url' => 'Cursos', 'icon' => 'fas fa-book')
+
+                        );
+
+                        foreach ($videos as $opcion) {
+                            if (in_array($opcion['nombre'], $permisos)) {
+                                echo "
+                                            <li class='nav-item'>
+                                                <a href='" . RUTA_URL . "/" . $opcion['url'] . "' class='nav-link'>
+                                                    <i class='" . $opcion['icon'] . " nav-icon'></i>
+                                                    <p>" . $opcion['nombre'] . "</p>
+                                                </a>
+                                            </li>";
+                            }
+                        }
+                        ?>
+
+                 </ul>
+
+                 
+             </li>
+             <li class="nav-item has-treeview">
+                 <a href="#" class="nav-link active">
+                     <i class="nav-icon fas fa-book-open"></i>
+                     <p>
+                         Asignaturas
+                         <i class="right fas fa-angle-left"></i>
+                     </p>
+                 </a>
+                 <ul class="nav nav-treeview">
+                     <?php
+                        $videos = array(
+                            array('nombre' => 'Mis Asignaturas', 'url' => 'AsignaturasUsuario', 'icon' => 'fas fa-book-open')
 
                         );
 

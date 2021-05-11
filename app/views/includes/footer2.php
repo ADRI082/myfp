@@ -80,6 +80,7 @@
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/signup.js?v=<?php echo(rand()); ?>"></script>
 
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/asignatura.js?v=<?php echo(rand()); ?>"></script>
+<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/asignaturasUsuario.js?v=<?php echo(rand()); ?>"></script>
 
 <!-- Configuracion -->
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/configuracion.js?v=<?php echo(rand()); ?>"></script>

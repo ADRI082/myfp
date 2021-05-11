@@ -20,24 +20,15 @@ if (window.location.pathname.includes('/Signup')) {
                 url: "http://localhost/myfp/Signup/insertarUsuario",
                 success: function (respuesta) {
 
-
-                    swal({
+                    Swal.fire({
                         title: "Informacion!",
                         text: respuesta.salida,
                         type: "success"
-                    }).then(function() {
-                        if(salida.booleano){
-                            window.location.href = "http://localhost/myfp/login";
-                        }
-                       
-                    });
+                    })
                 }
             });
 
-
-
-           
-
+            window.location.href = "http://localhost/myfp/login";
 
         } else {
             alert('Las contraseñas no coinciden');
