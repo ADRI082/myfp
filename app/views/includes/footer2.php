@@ -77,6 +77,7 @@
 
 
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/cursos.js?v=<?php echo(rand()); ?>"></script>
+<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/signup.js?v=<?php echo(rand()); ?>"></script>
 
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/asignatura.js?v=<?php echo(rand()); ?>"></script>
 
