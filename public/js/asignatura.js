@@ -2,7 +2,23 @@ if (window.location.pathname.includes('/Asignaturas')) {
 
     $(document).ready(function () {
 
-        idAsignatura = $('#idAsignatura').val()
+        idAsignatura = $('#idAsignatura').val();
+
+        $.ajax({
+            type: "POST",
+            data: {idAsignatura:idAsignatura},
+            dataType:'json',
+            url: "../../myfp/Asignaturas/comprobarFavorito",
+            success: function (respuesta) {
+
+                console.log(respuesta);
+
+                if(respuesta){
+                    $("#addFavorito").html('Eliminar de favoritos <i class="fas fa-heart-broken"></i>');
+                    $('#favorito').val(1);
+                }
+            }
+        });
 
         cargarDataTable(idAsignatura);
 
@@ -127,6 +143,33 @@ if (window.location.pathname.includes('/Asignaturas')) {
 
 
     }
+
+    $(document).on('click', '#addFavorito', function (e) {
+
+        e.preventDefault();
+
+        if($('#favorito').val()==0){
+            $("#addFavorito").html('Eliminar de favoritos <i class="fas fa-heart-broken"></i>');
+            $('#favorito').val(1);
+        }else{
+            $("#addFavorito").html('Añadir a favoritos <i class="fas fa-heart"></i>');
+            $('#favorito').val(0);
+        }
+
+        favorito = $('#favorito').val();
+        idAsignatura = $('#idAsignatura').val();
+
+
+        $.ajax({
+            type: "POST",
+            data: {favorito:favorito,idAsignatura:idAsignatura},
+            url: "../../myfp/Asignaturas/addFavorito",
+            success: function (respuesta) {
+
+            }
+        });
+       
+    });
 
 
 

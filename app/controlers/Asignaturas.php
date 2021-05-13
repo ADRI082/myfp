@@ -113,6 +113,46 @@ class Asignaturas extends Controlador
 
     }
 
+    public function addFavorito()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+            session_start();
+
+            $idAsignatura = $_POST['idAsignatura'];
+            $favorito = $_POST['favorito'];
+            $idUsuario = $_SESSION['id_usuario'];
+
+            if($favorito == 1){
+                $this->modeloAsignatura->addFavorito($idAsignatura,$idUsuario);
+            }else{
+                $this->modeloAsignatura->deleteFavorito($idAsignatura,$idUsuario);
+            }
+
+        }
+
+        echo true;
+
+    }
+
+    public function comprobarFavorito()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+            session_start();
+
+            $idAsignatura = $_POST['idAsignatura'];
+            $idUsuario = $_SESSION['id_usuario'];
+
+            $resultado = $this->modeloAsignatura->comprobarFavorito( $idAsignatura, $idUsuario);
+
+            echo json_encode($resultado);
+
+        }
+
+    }
+
 
 
     

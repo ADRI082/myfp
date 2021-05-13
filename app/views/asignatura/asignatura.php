@@ -32,6 +32,7 @@
                     <div class="col-md-3">
                         <button type="button" data-toggle="modal" data-target="#modalSubidaFichero" id="addFichero" class="btn btn-success">Subir Archivo</button>
                         <button type="button" id="addFavorito" class="btn btn-danger">Añadir a favoritos <i class="fas fa-heart"></i></button>
+                        <input type="hidden" name="" id="favorito" value="0">
                     </div>
                 </div>
             </div>
