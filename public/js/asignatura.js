@@ -32,6 +32,8 @@ if (window.location.pathname.includes('/Asignaturas')) {
 
         idAsignatura = $('#idAsignatura').val();
 
+        $("#selectBloque").empty().trigger('change')
+
 
         $.ajax({
             type: "POST",
@@ -40,10 +42,7 @@ if (window.location.pathname.includes('/Asignaturas')) {
             },
             dataType: 'json',
             url: "../../myfp/Asignaturas/obtenerBloquesAsignatura",
-            success: function (respuesta) {
-
-                console.log(respuesta);
-
+            success: function (respuesta) {    
 
                 for (let index = 0; index < respuesta.length; index++) {
                     // tail.select('#idEmpleadoBD').options.add("'" + data[index]['Id'] + "'", data[index]['informacion'], "", false, false, false, true);
