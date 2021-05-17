@@ -30,7 +30,7 @@ class Login extends Controlador{
             $_SESSION['nombre'] = $usuario->nombre;
             $_SESSION['apellidos'] = $usuario->apellido;
             $_SESSION['mail'] = $usuario->email;
-            $_SESSION['puesto'] = $usuario->puestoDescrip; 
+            $_SESSION['nickname'] = $usuario->nickname; 
             $_SESSION['rol'] = '1';            
             $_SESSION['autorizado'] = 1;
             $_SESSION["timeout"] = time();

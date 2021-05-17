@@ -71,6 +71,39 @@ class ModeloLogin{
         $this->db->execute();
     }
 
+    public function getDatosUsuario($idUsuario)
+    {
+        $this->db->query('SELECT * FROM usuario  WHERE idUsuario = :id');
+        $this->db->bind(':id', $idUsuario);
+
+        $fila = $this->db->registro();
+
+
+        return $fila;
+
+    }
+
+    public function updatearUsuario($datos)
+    {
+
+        session_start();
+
+        $this->db->query('UPDATE usuario set nombre = :nombre , apellido=:apellido,nickname=:nickname,email=:email,password=:password where idUsuario = :idUsuario' );
+        $this->db->bind(':nombre', $datos['NombreEdit']);
+        $this->db->bind(':apellido', $datos['ApellidosEdit']);
+        $this->db->bind(':nickname', $datos['nickNameEdit']);
+        $this->db->bind(':email', $datos['emailEdit']);
+        $this->db->bind(':password', $datos['passwordEdit']);
+        $this->db->bind(':idUsuario', $_SESSION['id_usuario']);
+
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
 
 
 
