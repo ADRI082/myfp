@@ -36,9 +36,10 @@ class Login extends Controlador{
             $_SESSION["timeout"] = time();
             $_SESSION["duracion"] = 10; // duracion de la session en segundos
             //redireccionar('/paginas');
-            redireccionar('/datatable');
+            // redireccionar('/datatable');
+            echo json_encode(true);
         } else {
-            redireccionar('/login');
+            echo json_encode(false);
         }   
   
     }

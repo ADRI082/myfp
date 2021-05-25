@@ -8,7 +8,7 @@
 
 <!-- =============== Logo sin la clase elevation-3 para dejar la imagen del logo en el mismo lugar que se ha añadido =============== --> 
            
-           <img src="<?php echo RUTA_URL ?>/img/logo/logo_informa_corto.png" alt="AdminLTE Logo" class="brand-image img-circle"
+           <img src="<?php echo RUTA_URL ?>/img/logo/logo_myfp.png" alt="AdminLTE Logo" class="brand-image img-circle"
            style="opacity: 1.0">
       
       

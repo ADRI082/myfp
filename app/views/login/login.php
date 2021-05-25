@@ -26,7 +26,7 @@
 
 <body class="hold-transition login-page">
   <div class="login-box">
-    <div class="login-logo ">
+    <div style="width: 100%;">
       <img src="<?php echo RUTA_URL ?>/public/img/logo/myfp.png">
     </div>
     <!-- /.login-logo -->
@@ -34,9 +34,11 @@
       <div class="card-body login-card-body">
         <p class="login-box-msg"></p>
 
-        <form action="<?php echo RUTA_URL ?>/login/comprobar" method="post">
+        <!-- HACER QUE LOS DATOS VAYAN POR AJAX -->
+
+        <!-- <form action="<?php echo RUTA_URL ?>/login/comprobar" method="post"> -->
           <div class="input-group mb-3">
-            <input type="email" class="form-control" name="mail" placeholder="Email" required="">
+            <input type="email" class="form-control" id="userEmail" name="mail" placeholder="Email" required="">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -44,12 +46,15 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
               </div>
             </div>
+          </div>
+          <div class="input-group mb-3 " id="error"  style="display: none; Color: red;">
+            <label for="error" >Usuario y/o Contraseña Incorrectos</label>
           </div>
           <div class="row">
             <div class="col-8">
@@ -59,10 +64,10 @@
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-warning btn-block">Acceder</button>
+              <button type="button" id="logeo" class="btn btn-warning btn-block ">Acceder</button>
             </div>
             <!-- /.col -->
-        </form>
+        <!-- </form> -->
 
         <div class="col-8">
           <a href="<?php echo RUTA_URL ?>/Signup">¿No tienes cuenta? Registrate!</a>
@@ -78,7 +83,6 @@
     </div>
     <!-- /.login-card-body -->
   </div>
-  </div>
   <!-- /.login-box -->
 
   <!-- jQuery -->
@@ -87,6 +91,8 @@
   <script src="<?php echo RUTA_URL ?>/public/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="<?php echo RUTA_URL ?>/public/js/adminlte.min.js"></script>
+
+  <script src="<?php echo RUTA_URL ?>/public/js/login.js"></script>
 
 </body>
 
