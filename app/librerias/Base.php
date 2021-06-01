@@ -87,6 +87,9 @@ class Base
         return $this->stmt->rowCount();
     }
 
+    /**
+     * Obtener el último id insertado en la bbdd
+     */
     public function lastInsertId(){
         return $this->dbh->lastInsertId();
     }

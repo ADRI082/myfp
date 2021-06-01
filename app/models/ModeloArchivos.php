@@ -11,6 +11,10 @@ class ModeloArchivos
         $this->db = new Base;
     }
 
+    /**
+     * Función que inserta guarda los datos de un fichero en la bbdd
+     */
+
     public function guardarFichero($file, $post)
     {
 
@@ -29,12 +33,15 @@ class ModeloArchivos
        
         //Ejecutar
         if ($this->db->execute()) {
-            return true;
+            return $this->db->lastInsertId();
         } else {
             return false;
         }
     }
 
+    /**
+     * Función que coge los documentos por la id de la asignatura
+     */
     public function getDocumentosByIdAsignatura($idAsignatura)
     {
 
@@ -45,5 +52,47 @@ class ModeloArchivos
         $archivos = $this->db->registros();
 
         return $archivos;
+    }
+
+    /**
+     * Función que inserta los datos que un usuario ha subido en la bbdd
+     */
+
+    public function insertarSubida($idArchivo)
+    {
+
+        session_start();
+
+        $this->db->query('INSERT INTO subidas (idUsuario,idArchivo,fechaSubida) 
+        VALUES (:idUsuario,:idArchivo,:fecha)');
+
+        // vincular valores
+        $this->db->bind(':idUsuario',$_SESSION['idUsuario']);
+        $this->db->bind(':idArchivo',$idArchivo);
+        $this->db->bind(':fecha',date('Y-m-d'));
+       
+        $this->db->execute();
+    
+    }
+
+    /**
+     * Función que inserta los datos que un usuario ha descargado en la bbdd
+     */
+
+    public function insertarDescarga($idArchivo)
+    {
+
+        session_start();
+
+        $this->db->query('INSERT INTO descargas (idUsuario,idArchivo,fechaDescarga) 
+        VALUES (:idUsuario,:idArchivo,:fecha)');
+
+        // vincular valores
+        $this->db->bind(':idUsuario',$_SESSION['idUsuario']);
+        $this->db->bind(':idArchivo',$idArchivo);
+        $this->db->bind(':fecha',date('Y-m-d'));
+       
+        $this->db->execute();
+    
     }
 }

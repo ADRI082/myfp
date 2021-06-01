@@ -106,7 +106,16 @@ if (window.location.pathname.includes('/Asignaturas')) {
 
         filaDocProyecto = $(this).closest("tr");
         idAsignatura = $('#idAsignatura').val(); //capturo el id
+        idArchivo =  filaDocProyecto.find('td:eq(0)').text();
         nombreFichero = filaDocProyecto.find('td:eq(1)').text();
+
+        $.ajax({
+            type: "POST",
+            data: {idArchivo:idArchivo},
+            url: "../../myfp/Asignaturas/insertarDescarga",
+            success: function () {
+            }
+        });
         
         //window.open("dist/documentosficherosFactura/" + idfactura + "_" + nombreFichero);
         window.open("public/documentos/ficheros/" + idAsignatura + "_" + nombreFichero);

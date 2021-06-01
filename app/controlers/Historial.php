@@ -1,54 +1,61 @@
 <?php
 
-
-class Perfil extends Controlador
+class Historial extends Controlador
 {
 
     public function __construct()
     {
-        
-        $this->modeloLogin = $this->modelo('ModeloLogin');
+        $this->modeloHistorial = $this->modelo('ModeloHistorial');
+
     } // fin del constructor
-    
+
      /**
     * Función en la que el controlador entra por defecto para poder cargar las vistas y los datos necesarios para mostrar en la vista deseada.
     */
+
     public function index()
     {
 
         //Obtener los usuarios
         $this->iniciar();
 
-        $datos = $this->modeloLogin->getDatosUsuario($_SESSION['id_usuario']);
-
+        
 
         if (isset($_SESSION['autorizado']) || $_SESSION['autorizado'] == 1) {
-            $this->vista('perfil/perfil', $datos);
+            $this->vista('historial/historial', $datos);
         } else {
             redireccionar('/login');
         }
     } // fin de la fucnion index
 
+
     /**
-     * Función en la que se cambian los datos del usuario.
+     * Función en la que se obtiene el historial de descargas de archivos de un usuario
      */
 
-    public function editarUsuario()
+    public function getHistorialDescargas()
     {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-            $datos = [];
-            foreach($_POST['form'] as $row){
-                $datos[$row['name']]=$row['value'];
-            }
-
-            $resultado = $this->modeloLogin->updatearUsuario($datos);
+            $resultado = $this->modeloHistorial->getHistorialDescargas();
 
             echo json_encode($resultado);
-
         }
+
     }
 
+
+    /**
+     * Función en la que se obtiene el historial de archivos subidos de un usuario
+     */
+    public function getHistorialSubidas()
+    {
+
+        $resultado = $this->modeloHistorial->getHistorialSubidas();
+
+        echo json_encode($resultado);
+        
+    }
 
 
 } // fin de la clase

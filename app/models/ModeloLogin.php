@@ -12,7 +12,9 @@ class ModeloLogin{
 
 
 
-
+    /**
+     * Función que obtiene los datos de un usuario según su email y su contraseña
+     */
     public function obtenerUsuarioMail($mail,$pass){
         $this->db->query('SELECT * FROM usuario  WHERE email = :mail AND password = :pass');
         $this->db->bind(':mail', $mail);
@@ -23,6 +25,9 @@ class ModeloLogin{
         return $fila;
     }
 
+    /**
+     * Función que comprueba si un email existe o no en la bbdd
+     */
     public function comprobarEmail($email) 
     {
 
@@ -40,6 +45,10 @@ class ModeloLogin{
         return $resultado;
 
     }
+
+    /**
+     * Función que comprueba si un nickname existe o no en la bbdd
+     */
 
     public function comprobarNick($nick) 
     {
@@ -59,6 +68,10 @@ class ModeloLogin{
 
     }
 
+    /**
+     * Función que inserta a un usuario en la bbdd
+     */
+
     public function insertarUsuario($datos)
     {
         $this->db->query("INSERT INTO usuario (nombre,apellido,password,email,nickname) VALUES (:nombre,:apellido,:pass,:email,:nickname) ");
@@ -71,6 +84,10 @@ class ModeloLogin{
         $this->db->execute();
     }
 
+    /**
+     * Función que obtiene los datos de un usuario por su id
+     */
+
     public function getDatosUsuario($idUsuario)
     {
         $this->db->query('SELECT * FROM usuario  WHERE idUsuario = :id');
@@ -82,6 +99,10 @@ class ModeloLogin{
         return $fila;
 
     }
+
+    /**
+     * Función que actualiza los datos de un usuario
+     */
 
     public function updatearUsuario($datos)
     {
@@ -104,6 +125,17 @@ class ModeloLogin{
 
     }
 
+    /**
+     * Función que actualiza la contraseña de un usuario
+     */
+
+    public function resetearPassword($newPass,$email)
+    {
+        $this->db->query('UPDATE usuario set password=:password where email = :email' );
+        $this->db->bind(':password', $newPass);
+        $this->db->bind(':email', $email);
+        $this->db->execute();
+    }
 
 
 

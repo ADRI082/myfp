@@ -9,11 +9,20 @@ class SignUp extends Controlador
         $this->modeloLogin = $this->modelo('ModeloLogin');
     } // fin del constructor
 
+
+     /**
+    * Función en la que el controlador entra por defecto para poder cargar las vistas y los datos necesarios para mostrar en la vista deseada.
+    */
+
     public function index()
     {
 
         $this->vista('signup/signup');
     }
+
+    /**
+     * Función que registra un usuario y lo inserta en la bbdd
+     */
 
     public function insertarUsuario()
     {

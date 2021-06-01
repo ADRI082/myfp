@@ -11,6 +11,10 @@ class ModeloAsignaturas
         $this->db = new Base;
     }
 
+    /**
+     * Función que obtiene todas las asignaturas que tiene un curso
+     */
+
     public function getAsignaturaByIdCurso($idCurso)
     {
 
@@ -20,6 +24,10 @@ class ModeloAsignaturas
 
         return $cursos;
     }
+
+    /**
+     * Función que obtiene los datos de una asignatura
+     */
 
     public function obtenerDatosAsignatura($idAsignatura)
     {
@@ -31,6 +39,9 @@ class ModeloAsignaturas
         return $asignatura;
     }
 
+    /**
+     * Función que obtiene todos los bloques de una asignatura
+     */
     public function obtenerBloquesAsignatura($idAsignatura)
     {
         $this->db->query('SELECT idBloques, nombre FROM bloques where Asignatura_idAsignatura =' . $idAsignatura);
@@ -39,6 +50,10 @@ class ModeloAsignaturas
 
         return $bloques;
     }
+
+    /**
+     * Función que obtiene las asignaturas favoritas de un usuario
+     */
 
     public function getAsignaturasFavoritas($idUsuario)
     {
@@ -52,6 +67,10 @@ class ModeloAsignaturas
         return $cursos;
     }
 
+    /**
+     * Función que añade una asignatura a favoritos en al bbdd
+     */
+
     public function addFavorito($idAsignatura, $idUsuario)
     {
 
@@ -63,6 +82,10 @@ class ModeloAsignaturas
         $this->db->execute();
     }
 
+    /**
+     * Función que borra de la base de datos una asignatura que esté en favoritos en la bbdd
+     */
+
     public function deleteFavorito($idAsignatura, $idUsuario)
     {
 
@@ -73,6 +96,10 @@ class ModeloAsignaturas
 
         $this->db->execute();
     }
+
+    /**
+     * Función que comprueba si una asignatura está o no en la bbdd
+     */
 
     public function comprobarFavorito($idAsignatura, $idUsuario)
     {

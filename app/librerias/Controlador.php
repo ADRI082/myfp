@@ -28,12 +28,18 @@ class Controlador
         }
     }
 
+    /**
+     * Función que inicia la sesión del usuario
+     */
     public function iniciar()
     {
         session_start();
     }
     
 
+    /**
+     * Función que destruye la sesión del usuario
+     */
     public function salir()
     {
         

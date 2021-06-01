@@ -59,7 +59,7 @@
           <div class="row">
             <div class="col-8">
               <div class="icheck-primary">
-                <a href="<?php echo RUTA_URL ?>/login">¿Has olvidado tu contrase&ntildea?</a>
+                <a href="<?php echo RUTA_URL ?>/login/resetPassword">¿Has olvidado tu contrase&ntildea?</a>
               </div>
             </div>
             <!-- /.col -->

@@ -12,6 +12,11 @@ class Asignaturas extends Controlador
 
     } // fin del constructor
 
+
+   /**
+    * Función en la qie el controlador entra por defecto para poder cargar las vistas y los datos necesarios para mostrar en la vista deseada.
+    */
+
     public function index()
     {
 
@@ -28,6 +33,10 @@ class Asignaturas extends Controlador
         }
     } // fin de la fucnion index
 
+    /**
+     * Función en la que obtenemos la asignatura según el Id del curso que seleccione el usuario
+     */
+
     public function getAsignaturaByIdCurso()
     {
 
@@ -41,6 +50,11 @@ class Asignaturas extends Controlador
         }
        
     }
+
+    /**
+     * 
+     * Función en la que obtienes los nombres de los bloques de una asignatura según la asignatura que elijas
+     */
 
     public function obtenerBloquesAsignatura()
     {
@@ -57,6 +71,10 @@ class Asignaturas extends Controlador
 
     }
 
+    /**
+     * Función que guarda un fichero en el servidor
+     */
+
     public function guardarFichero()
     {
 
@@ -64,7 +82,9 @@ class Asignaturas extends Controlador
 
            //insetar el fichero en la base de datos
 
-           $this->modeloArchivo->guardarFichero($_FILES,$_POST);
+           $idArchivo = $this->modeloArchivo->guardarFichero($_FILES,$_POST);
+
+           $this->modeloArchivo->insertarSubida($idArchivo);
 
            
            $nombre = $_POST['idAsignatura']."_".$_FILES['fichero']['name'];
@@ -97,6 +117,10 @@ class Asignaturas extends Controlador
 
     }
 
+    /**
+     * Función que carga todos los documentos que existen en el servidor que son de una asignatura
+     */
+
     public function getDocumentosByIdAsignatura()
     {
 
@@ -112,6 +136,10 @@ class Asignaturas extends Controlador
         }
 
     }
+
+    /**
+     * Función que añade a favoritos una asignatura
+     */
 
     public function addFavorito()
     {
@@ -135,6 +163,10 @@ class Asignaturas extends Controlador
 
     }
 
+    /**
+     * Función que comprueba si una asignatura está ya añadida a favoritos
+     */
+
     public function comprobarFavorito()
     {
 
@@ -153,7 +185,19 @@ class Asignaturas extends Controlador
 
     }
 
+    /**
+     * Función que inserta en la base de datos el archivo que ha sido descargado por el usuario recientemente
+     */
 
+    public function insertarDescarga()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+            $idArchivo = $_POST['idArchivo'];
+            $this->modeloArchivo->insertarDescarga($idArchivo);
+        }
+
+    }
 
     
    

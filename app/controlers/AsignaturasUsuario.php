@@ -10,6 +10,10 @@ class AsignaturasUsuario extends Controlador
         $this->modeloAsignatura = $this->modelo('ModeloAsignaturas');
     } // fin del constructor
 
+
+    /**
+    * Función en la que el controlador entra por defecto para poder cargar las vistas y los datos necesarios para mostrar en la vista deseada.
+    */
     public function index()
     {
 
@@ -27,6 +31,9 @@ class AsignaturasUsuario extends Controlador
         }
     } // fin de la fucnion index
 
+    /**
+     * Función en la que se obtiene las asignaturas favoritas de un usuario
+     */
     public function getAsignaturasFavoritas()
     {
         if ($_SERVER['REQUEST_METHOD'] == "POST") {

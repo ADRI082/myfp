@@ -83,6 +83,8 @@
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/perfil.js?v=<?php echo(rand()); ?>"></script>
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/login.js?v=<?php echo(rand()); ?>"></script>
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/asignaturasUsuario.js?v=<?php echo(rand()); ?>"></script>
+<script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/historial.js?v=<?php echo(rand()); ?>"></script>
+
 
 <!-- Configuracion -->
 <script type="text/javascript" src="<?php echo RUTA_URL ?>/public/js/configuracion.js?v=<?php echo(rand()); ?>"></script>

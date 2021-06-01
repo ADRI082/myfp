@@ -10,6 +10,10 @@ class Cursos extends Controlador
          $this->modeloCursos = $this->modelo('ModeloCursos');
     } // fin del constructor
 
+
+    /**
+    * Función en la que el controlador entra por defecto para poder cargar las vistas y los datos necesarios para mostrar en la vista deseada.
+    */
     public function index()
     {
 
@@ -30,66 +34,6 @@ class Cursos extends Controlador
         }
     } // fin de la fucnion index
 
-    public function buscadorCliente()
-    {
-
-       
-        $this->iniciar();
-
-
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $salida = [
-                "id" => $_POST['id']
-            ];
-           
-             if (isset($_POST['documento'])) {
-                // insertamos el documento escrito
-                $contenido = [
-                    "id" => $_POST['id'],
-                    "fecha" => $_POST['fecha'],
-                    "agente" => $_POST['agente'],
-                    "titulo" => $_POST['titulo'],
-                    "documento" => $_POST['documento']
-                ];
-                
-                $this->fichaClienteModelo->insertarObservaciones($contenido);
-                
-            } 
-
-            $empresaCliente = $this->fichaClienteModelo->obtenerEmpresaCliente($salida['id']);
-            $observaciones = $this->fichaClienteModelo->verObservacionesFichaCliente($salida['id']);
-            $agentes = $this->fichaClienteModelo->veragenteInputObservaciones();
-            $eventos = $this->fichaClienteModelo->verHistroricoEventos($salida['id']);
-            $emailCliente = $this->fichaClienteModelo->verHistoricoEmailCliente($salida['id']);
-            $representante = $this->fichaClienteModelo->obtenerRepresentante($salida['id']);
-            $asesores = $this->fichaClienteModelo->obtenerAsesores($salida['id']);
-            $contactos = $this->fichaClienteModelo->obtenerContactos($salida['id']);
-            $colaboradores = $this->fichaClienteModelo->obtenerColaboradores($salida['id']);
-
-            
     
-            $datos = [
-                "empresaCliente" => $empresaCliente,
-                "observaciones" => $observaciones,
-                "agentes" => $agentes,
-                "eventos" => $eventos,
-                "emailCliente" => $emailCliente,
-                "representante" => $representante,
-                "asesores" => $asesores,
-                "contactos" => $contactos,
-                "colaboradores" => $colaboradores
-        
-            ];
-
-            if (isset($_SESSION['autorizado']) || $_SESSION['autorizado'] == 1) {
-                $this->vista('fichaCliente/editarFicha', $datos);
-            } else {
-                redireccionar('/login');
-            }
-        }
-    } // fin de la funcion buscadorCliente
-
     
-   
-
 } // fin de la clase

@@ -6,12 +6,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Cursos</h1>
+                    <h1 class="m-0 text-dark">Historial</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Cursos</li>
+                        <li class="breadcrumb-item active">Historial</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -26,12 +26,11 @@
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
-                        <label for="clienteProyecto">Buscar Curso:</label>
-                        <select class="form-control select2" name="selectHisto" id="selectCursos" style="width: 100%;" required>
+                        <label for="clienteProyecto">Seleccionar Historial:</label>
+                        <select class="form-control select2" name="selectHisto" id="selectHistorial" style="width: 100%;" required>
                             <option disable>Seleccionar.....</option>
-                            <?php foreach ($datos['cursos'] as $cursos) : ?>
-                                <option value="<?php echo $cursos->idGrado; ?> "><?php echo $cursos->nombre; ?></option>
-                            <?php endforeach; ?>
+                            <option value="Descargas">Descargas</option>
+                            <option value="Subidas">Subidas</option>
                         </select>
                     </div>
                     <div class="col-md-3"></div>
@@ -39,24 +38,28 @@
             </div>
             <hr>
 
-            <table id="tablaAsignaturas" class="table table-striped table-bordered" style="display: none;" width="100%">
+            <table id="tablaHistorial" class="table table-striped table-bordered" style="display: none;" width="100%">
                 <thead>
                     <tr>
                         <th>idAsignatura</th>
-                        <th>Nombre</th>
-                        <th>Abreviatura</th>
-                        <th>Acción</th>
-
+                        <th>Asignatura</th>
+                        <th>Bloque</th>
+                        <th>Fecha</th>
+                        <th>Archivo</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody> </tbody>
-
+                <tbody> 
+                
+                </tbody>
                 <tfoot>
                     <tr>
                         <th>idAsignatura</th>
-                        <th>Nombre</th>
-                        <th>Abreviatura</th>
-                        <th>Acción</th>
+                        <th>Asignatura</th>
+                        <th>Bloque</th>
+                        <th>Fecha</th>
+                        <th>Archivo</th>
+                        <th>Acciones</th>
                 </tfoot>
 
             </table>
