@@ -27,7 +27,7 @@ class ModeloArchivos
         $this->db->bind(':nombre',$file['fichero']['name'] );
         $this->db->bind(':bloques_idBloques',$post['idBloque'] );
         $this->db->bind(':fechaSubida',date('Y-m-d'));
-        $this->db->bind(':usuario_idUsuario',$_SESSION['idUsuario'] );
+        $this->db->bind(':usuario_idUsuario',$_SESSION['id_usuario'] );
         $this->db->bind(':archivo', $file['fichero']['type']);
         $this->db->bind(':idAsignatura', $post['idAsignatura'] );
        

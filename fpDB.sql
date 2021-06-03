@@ -33,9 +33,9 @@ CREATE TABLE IF NOT EXISTS `archivos` (
   CONSTRAINT `fk_archivos_asignatura1` FOREIGN KEY (`idAsignatura`) REFERENCES `asignatura` (`idAsignatura`),
   CONSTRAINT `fk_archivos_bloques1` FOREIGN KEY (`bloques_idBloques`) REFERENCES `bloques` (`idBloques`),
   CONSTRAINT `fk_archivos_usuario1` FOREIGN KEY (`usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla mydb.archivos: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.archivos: ~9 rows (aproximadamente)
 /*!40000 ALTER TABLE `archivos` DISABLE KEYS */;
 INSERT INTO `archivos` (`idArchivos`, `nombre`, `bloques_idBloques`, `fechaSubida`, `usuario_idUsuario`, `archivo`, `idAsignatura`) VALUES
 	(1, 'MODULO 2curso celadorCampus Virtual.pdf', 1, '2021-05-06', 1, _binary 0x6170706C69636174696F6E2F706466, 1);
@@ -49,6 +49,16 @@ INSERT INTO `archivos` (`idArchivos`, `nombre`, `bloques_idBloques`, `fechaSubid
 	(5, 'heidiSQLAerodynamics.txt', 3, '2021-05-06', 1, _binary 0x746578742F706C61696E, 1);
 INSERT INTO `archivos` (`idArchivos`, `nombre`, `bloques_idBloques`, `fechaSubida`, `usuario_idUsuario`, `archivo`, `idAsignatura`) VALUES
 	(6, 'HORARIOS DATA LEAN POR PROYECTO.ods', 1, '2021-05-06', 1, _binary 0x6170706C69636174696F6E2F766E642E6F617369732E6F70656E646F63756D656E742E7370726561647368656574, 1);
+INSERT INTO `archivos` (`idArchivos`, `nombre`, `bloques_idBloques`, `fechaSubida`, `usuario_idUsuario`, `archivo`, `idAsignatura`) VALUES
+	(7, '1_HORARIOS DATA LEAN POR PROYECTO.ods', 2, '2021-05-13', 1, _binary 0x6170706C69636174696F6E2F766E642E6F617369732E6F70656E646F63756D656E742E7370726561647368656574, 1);
+INSERT INTO `archivos` (`idArchivos`, `nombre`, `bloques_idBloques`, `fechaSubida`, `usuario_idUsuario`, `archivo`, `idAsignatura`) VALUES
+	(8, 'tabla facturacion consultores.ods', 1, '2021-05-16', 1, _binary 0x6170706C69636174696F6E2F766E642E6F617369732E6F70656E646F63756D656E742E7370726561647368656574, 1);
+INSERT INTO `archivos` (`idArchivos`, `nombre`, `bloques_idBloques`, `fechaSubida`, `usuario_idUsuario`, `archivo`, `idAsignatura`) VALUES
+	(9, 'Screenshot_1.png', 2, '2021-05-16', 1, _binary 0x696D6167652F706E67, 1);
+INSERT INTO `archivos` (`idArchivos`, `nombre`, `bloques_idBloques`, `fechaSubida`, `usuario_idUsuario`, `archivo`, `idAsignatura`) VALUES
+	(10, 'Manual Técnico (1).pdf', 1, '2021-05-26', 1, _binary 0x6170706C69636174696F6E2F706466, 1);
+INSERT INTO `archivos` (`idArchivos`, `nombre`, `bloques_idBloques`, `fechaSubida`, `usuario_idUsuario`, `archivo`, `idAsignatura`) VALUES
+	(11, 'Reportes.xlsx', 1, '2021-06-03', 1, _binary 0x6170706C69636174696F6E2F766E642E6F70656E786D6C666F726D6174732D6F6666696365646F63756D656E742E73707265616473686565746D6C2E7368656574, 1);
 /*!40000 ALTER TABLE `archivos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.asignatura
@@ -94,24 +104,41 @@ INSERT INTO `bloques` (`idBloques`, `nombre`, `Asignatura_idAsignatura`) VALUES
 	(3, 'Gestión de la información', 1);
 /*!40000 ALTER TABLE `bloques` ENABLE KEYS */;
 
+-- Volcando estructura para tabla mydb.descargas
+CREATE TABLE IF NOT EXISTS `descargas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `idUsuario` int DEFAULT NULL,
+  `idArchivo` int DEFAULT NULL,
+  `fechaDescarga` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla mydb.descargas: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `descargas` DISABLE KEYS */;
+INSERT INTO `descargas` (`id`, `idUsuario`, `idArchivo`, `fechaDescarga`) VALUES
+	(1, 1, 10, '2021-05-26');
+/*!40000 ALTER TABLE `descargas` ENABLE KEYS */;
+
 -- Volcando estructura para tabla mydb.favoritos
 CREATE TABLE IF NOT EXISTS `favoritos` (
   `id` int NOT NULL AUTO_INCREMENT,
   `idUsuario` int NOT NULL,
   `idAsignatura` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla mydb.favoritos: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.favoritos: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `favoritos` DISABLE KEYS */;
-INSERT INTO `favoritos` (`id`, `idUsuario`, `idAsignatura`) VALUES
-	(1, 1, 1);
 INSERT INTO `favoritos` (`id`, `idUsuario`, `idAsignatura`) VALUES
 	(2, 1, 2);
 INSERT INTO `favoritos` (`id`, `idUsuario`, `idAsignatura`) VALUES
 	(3, 1, 3);
 INSERT INTO `favoritos` (`id`, `idUsuario`, `idAsignatura`) VALUES
-	(4, 1, 4);
+	(6, 1, 4);
+INSERT INTO `favoritos` (`id`, `idUsuario`, `idAsignatura`) VALUES
+	(11, 16, 1);
+INSERT INTO `favoritos` (`id`, `idUsuario`, `idAsignatura`) VALUES
+	(15, 1, 1);
 /*!40000 ALTER TABLE `favoritos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla mydb.grado
@@ -130,6 +157,23 @@ INSERT INTO `grado` (`idGrado`, `nombre`, `abreviatura`) VALUES
 	(2, 'Desarrollo Aplicaciones Web', 'DAW');
 /*!40000 ALTER TABLE `grado` ENABLE KEYS */;
 
+-- Volcando estructura para tabla mydb.subidas
+CREATE TABLE IF NOT EXISTS `subidas` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `idUsuario` int DEFAULT NULL,
+  `idArchivo` int DEFAULT NULL,
+  `fechaSubida` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- Volcando datos para la tabla mydb.subidas: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `subidas` DISABLE KEYS */;
+INSERT INTO `subidas` (`id`, `idUsuario`, `idArchivo`, `fechaSubida`) VALUES
+	(1, 1, 10, '2021-05-26');
+INSERT INTO `subidas` (`id`, `idUsuario`, `idArchivo`, `fechaSubida`) VALUES
+	(2, NULL, 11, '2021-06-03');
+/*!40000 ALTER TABLE `subidas` ENABLE KEYS */;
+
 -- Volcando estructura para tabla mydb.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
   `idUsuario` int NOT NULL AUTO_INCREMENT,
@@ -139,12 +183,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(45) NOT NULL,
   `nickname` varchar(45) NOT NULL,
   PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
--- Volcando datos para la tabla mydb.usuario: ~12 rows (aproximadamente)
+-- Volcando datos para la tabla mydb.usuario: ~15 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `password`, `email`, `nickname`) VALUES
-	(1, 'adrian', 'beigveder', '1234', 'test@gmail.es', 'adri_08');
+	(1, 'adrian', 'beigveder', 'd41YuDCSB', 'beigvederjimenezadrian@gmail.com', 'ADRI082');
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `password`, `email`, `nickname`) VALUES
 	(2, 'Kike', 'Orellana', '1234', 'test2@gmail.com', 'Ryzz');
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `password`, `email`, `nickname`) VALUES
@@ -173,6 +217,8 @@ INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `password`, `email`, `
 	(14, 'Jesus', 'canas', '1234', 'potisto@gmail.com', 'potisto');
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `password`, `email`, `nickname`) VALUES
 	(15, 'Natalia', 'Barranquero', '1234', 'nat@gmail.com', 'natroo');
+INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `password`, `email`, `nickname`) VALUES
+	(16, 'Prueba', 'video', '1234', 'prueba@gmail.es', 'PruebaVideo');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
